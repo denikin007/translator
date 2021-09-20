@@ -16,16 +16,9 @@ public class TranslatorService {
         File outputFile = new File(outputFileURL);
         InputStream in = new FileInputStream(inputFileURL);
         OutputStream out = new FileOutputStream(outputFile);
-
         String inputFileContent = getStringFromInputStream(in);
         String invertida="";
-        //System.out.println(inputFileContent);
-
         invertida = reverseStringToInputStream(inputFileContent);
-
-        //countStanzas(inputFileContent);
-        //replaceToWordFile(inputFileContent,"Denikin","src/main/resources/finaloutput.txt");
-        //saveFileIdentifyWordsRepeated(inputFileContent,"src/main/resources/statistics.txt");
         StreamUtils.copy(invertida, StandardCharsets.UTF_8, out);
     }
 
@@ -49,12 +42,10 @@ public class TranslatorService {
                 invertido = line +"\n"+ invertido;
             }
         }
-        //System.out.println(estrofas.toString());
         return estrofas.toString();
     }
 
     public int countStanzas(String texto){
-        StringBuilder estrofas = new StringBuilder();
         Scanner in = new Scanner(texto);
         int resultado = 0;
         while(in.hasNextLine()){
@@ -63,7 +54,6 @@ public class TranslatorService {
                 resultado++;
             }
         }
-        //System.out.println(resultado);
         return resultado;
     }
 

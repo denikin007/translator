@@ -5,11 +5,8 @@ import org.apache.commons.io.IOUtils;
 import org.junit.jupiter.api.Test;
 
 import java.io.*;
-import java.nio.charset.StandardCharsets;
 
 import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertTrue;
-import org.springframework.util.StreamUtils;
 
 public class TranslatorServiceTest {
 
